@@ -1,0 +1,45 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'application'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Groovy
+    implementation 'org.codehaus.groovy:groovy-all:3.0.20'
+
+    // Jackson for JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.6'
+
+    // Lombok (requires annotation processor)
+    implementation 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // BCrypt for password hashing
+    implementation 'org.mindrot:jbcrypt:0.4'
+
+    // JUnit 5 for testing
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Define the entry point
+application {
+    mainClass = 'main.java.TicketBookingSystem.App' // Ensure this matches your package & class name
+}
+
+// Use UTF-8 encoding for Java files
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
