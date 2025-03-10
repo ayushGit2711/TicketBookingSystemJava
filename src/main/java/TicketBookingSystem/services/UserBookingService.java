@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class UserBookingService {
     public User user;
     private List<User> userList;
-    private static final String USER_PATH = "../localdb/users.json";
+    private static final String USER_PATH = "src/main/java/TicketBookingSystem/localdb/users.json";
     private ObjectMapper objectMapper = new ObjectMapper();
 
     public UserBookingService(User user) throws IOException {
